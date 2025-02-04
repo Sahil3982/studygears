@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./connection.js"
+import productRoutes from './src/routes/productRoutes.js'
 // Load environment variables
 dotenv.config();
 
@@ -16,6 +17,8 @@ connectDB()
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to Node.js API!" });
 });
+
+app.use('/api/product', productRoutes)
 
 // Start server
 app.listen(PORT, () => {
