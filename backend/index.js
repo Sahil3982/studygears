@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import connectDB from "./connection.js"
 import productRoutes from './src/routes/productRoutes.js'
 import registerRoutes from './src/routes/registerRoutes.js'
+import loginRoutes from './src/routes/loginRoutes.js'
 // Load environment variables
 dotenv.config();
 
@@ -20,6 +21,7 @@ app.get("/", (req, res) => {
 
 app.use('/api/product', productRoutes)
 app.use('/api/register',registerRoutes)
+app.use('/api/login',loginRoutes)
 
 // Start server
 app.listen(PORT, () => {

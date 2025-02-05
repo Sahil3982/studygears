@@ -1,11 +1,11 @@
-import RegisterModel from "../models/registerModels.js";
+import registerModels from "../models/registerModels.js";
 
 const getRegisterData = async (req, res) => {
     try {
         const { name, email, passward, username } = req.body;
 
         // Check if the user already exists
-        const existingUser = await RegisterModel.findOne({ email: email });
+        const existingUser = await registerModels.findOne({ email: email });
         if (existingUser) {
             return res.status(400).json({
                 message: "User already registered",
@@ -13,7 +13,7 @@ const getRegisterData = async (req, res) => {
         }
 
         // Create a new user
-        const newUser = new RegisterModel({
+        const newUser = new registerModels({
             name,
             email,
             passward,
