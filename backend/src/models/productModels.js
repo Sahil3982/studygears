@@ -1,6 +1,4 @@
 import mongoose from "mongoose";
-
-// Define Product Schema
 const productSchema = new mongoose.Schema(
   {
     name: {
@@ -44,7 +42,7 @@ const productSchema = new mongoose.Schema(
     },
     discount: {
       type: Number,
-      default: 0, // Percentage discount
+      default: 0,
       min: 0,
       max: 100,
     },
@@ -87,11 +85,10 @@ const productSchema = new mongoose.Schema(
     },
   },
   {
-    timestamps: true, // Automatically adds createdAt & updatedAt
+    timestamps: true, 
   }
 );
 
-// Create the Product Model
 const Product = mongoose.model("Product", productSchema);
 
 export default Product;

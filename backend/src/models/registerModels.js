@@ -3,7 +3,6 @@ import mongoose from "mongoose";
 const registerSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true,
         trim: true
     },
     email: {
@@ -18,7 +17,6 @@ const registerSchema = new mongoose.Schema({
     },
     username: {
         type: String,
-        required: true,
         trim: true
     },
 })
