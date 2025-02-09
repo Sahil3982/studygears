@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-<<<<<<< Updated upstream
-import Navbar from '../components/navbar/Nabar'
-=======
-import Navbar from "@/components/navbar/Navbar";
+import Navbar from '../components/navbar/Navbar'
 
->>>>>>> Stashed changes
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

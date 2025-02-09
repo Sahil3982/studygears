@@ -17,7 +17,7 @@ const Navbar = () => {
           <div className="h-10 w-96 border-2 rounded-3xl flex items-center justify-start shadow-xl">
           <RiSearch2Line className="pl-5 h-full w-10" />
           </div>
-          // User Profile Pop
+          {/* User Profile Pop */}
           <div className="h-10 w-44 flex items-center justify-between gap-4 ">
             <button type="button" onClick={()=>router.push("/login")}  className=" border-2 px-5">Login</button>
            <Link href="/register"> <button type="button"className=" border-2 px-5">Register</button></Link> 
