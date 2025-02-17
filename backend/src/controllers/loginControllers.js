@@ -11,10 +11,15 @@ const loginControllers = async (req, res) => {
         }
 
         if (user.password !== password) {  
-            return res.status(401).json({ message: "Invalid credentials" });
+            return res.status(401).json({  message: "Invalid credentials" });
         }
 
-        return res.status(200).json({ message: "Login Successfully" });
+
+        res.status(200).json({
+            status : 200,
+            message: "Login Successfully" ,
+            user: { id: user._id, name: user.name, email: user.email, role: user.role,}
+          });
 
     } catch (error) {
         console.error(error);

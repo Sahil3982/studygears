@@ -19,6 +19,12 @@ const registerSchema = new mongoose.Schema({
         type: String,
         trim: true
     },
+    role: {
+        type: String,
+        enum: ["admin", "manager", "customer"],
+        default: "customer"
+    },
+
 })
 
 const Register = mongoose.model("register", registerSchema)

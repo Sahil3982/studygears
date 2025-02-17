@@ -12,21 +12,35 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(express.json()); 
-app.use(cors()); 
+app.use(express.json());
+app.use(cors());
 connectDB()
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to Node.js API!" });
 });
 
 app.use('/api/product', productRoutes)
-app.use('/api/register',registerRoutes)
-app.use('/api/login',loginRoutes)
+app.use('/api/register', registerRoutes)
+app.use('/api/login', loginRoutes)
 app.use('/api/product', productCartRoutes)
 
+app.param("id", (req, res, next, id) => {
+  console.log("hu");  
+  next()
+})
+app.param("year", (req, res, next, year,id) => {
+  console.log("year");  
+  next()
+})
+app.get('/api/:id/:year', (req, res) => {
+  res.send(`Hi ${req.params.id} year ${req.params.year}`)
+})
+app.get('/bpi',(req,res)=>{
+  res.send(`ok${req.query.product}`)
+
+})
 
 // Start server
 app.listen(PORT, () => {
   console.log(`✅ Server running on http://localhost:${PORT}`);
 });
- 
