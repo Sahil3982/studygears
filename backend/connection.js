@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 // Load environment variables from .env file
 dotenv.config();
 
-const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/studygears"; // Default to local MongoDB
+const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/studygears"; 
 
 const connectDB = async () => {
   try {

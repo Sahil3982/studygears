@@ -6,6 +6,7 @@ import productRoutes from './src/routes/productRoutes.js'
 import registerRoutes from './src/routes/registerRoutes.js'
 import loginRoutes from './src/routes/loginRoutes.js'
 import productCartRoutes from './src/routes/productCartRoutes.js'
+import addProductRoutes from './src/routes/addProductRoutes.js'
 dotenv.config();
 
 const app = express();
@@ -23,6 +24,7 @@ app.use('/api/product', productRoutes)
 app.use('/api/register', registerRoutes)
 app.use('/api/login', loginRoutes)
 app.use('/api/productcart', productCartRoutes)
+app.use('/api/addproduct',addProductRoutes)
 
 app.param("id", (req, res, next, id) => {
   console.log("hu");  
