@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 app.use('/api/product', productRoutes)
 app.use('/api/register', registerRoutes)
 app.use('/api/login', loginRoutes)
-app.use('/api/product', productCartRoutes)
+app.use('/api/productcart', productCartRoutes)
 
 app.param("id", (req, res, next, id) => {
   console.log("hu");  
