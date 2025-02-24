@@ -19,28 +19,28 @@ connectDB()
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to Node.js API!" });
 });
-
+ 
 app.use('/api/product', productRoutes)
 app.use('/api/register', registerRoutes)
 app.use('/api/login', loginRoutes)
 app.use('/api/productcart', productCartRoutes)
 app.use('/api/addproduct',addProductRoutes)
 
-app.param("id", (req, res, next, id) => {
-  console.log("hu");  
-  next()
-})
-app.param("year", (req, res, next, year,id) => {
-  console.log("year");  
-  next()
-})
-app.get('/api/:id/:year', (req, res) => {
-  res.send(`Hi ${req.params.id} year ${req.params.year}`)
-})
-app.get('/bpi',(req,res)=>{
-  res.send(`ok${req.query.product}`)
+// app.param("id", (req, res, next, id) => {
+//   console.log("hu");  
+//   next()
+// })
+// app.param("year", (req, res, next, year,id) => {
+//   console.log("year");  
+//   next()
+// })
+// app.get('/api/:id/:year', (req, res) => {
+//   res.send(`Hi ${req.params.id} year ${req.params.year}`)
+// })
+// app.get('/bpi',(req,res)=>{
+//   res.send(`ok${req.query.product}`)
 
-})
+// })
 
 // Start server
 app.listen(PORT, () => {
