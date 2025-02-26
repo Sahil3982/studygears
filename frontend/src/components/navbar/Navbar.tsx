@@ -42,6 +42,9 @@ const Navbar: React.FC = () => {
             </button>
           </Link>
         </div>
+        <Link href={'dashboard'}>
+          Dashboard
+        </Link>
         
         {/* Icons */}
         <div className="flex items-center gap-6">
